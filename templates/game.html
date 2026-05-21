@@ -212,6 +212,84 @@
             opacity:0.9;
         }
 
+@media screen and (max-width:768px){
+
+    body{
+        padding:10px;
+        height:auto;
+        min-height:100vh;
+    }
+
+    .game-window{
+
+        width:100%;
+        height:auto;
+
+        padding:15px;
+    }
+
+    .top-bar{
+
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .stats{
+
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:10px;
+    }
+
+    .stat-box{
+
+        font-size:14px;
+
+        padding:10px;
+    }
+
+    .game-display{
+
+        font-size:28px;
+
+        padding:20px;
+
+        gap:20px;
+    }
+
+    #exp{
+
+        word-break:break-word;
+
+        text-align:center;
+    }
+
+    #answer{
+
+        width:100% !important;
+
+        max-width:200px;
+    }
+
+    .bottom-bar{
+
+        flex-direction:column;
+    }
+
+    .btn{
+
+        width:100%;
+
+        padding:12px;
+
+        font-size:16px;
+    }
+}
+
     </style>
 </head>
 
@@ -257,7 +335,7 @@
 
             <div class="answer" style="display: flex; flex-direction: column;">
                 <label for="" id="label" style="font-size: 18px; text-align: center;"></label>
-                <input type="text" id="answer" style="border: ipx solid red; border-radius: 10px; padding: 10px; width: 100px;" placeholder="??">
+                <input type="text" id="answer" style="border: 1px solid red; border-radius: 10px; padding: 10px; width: 100px;" placeholder="??">
             </div>
 
             <button onclick="sendAnswer()" class="btn enter-btn" style="background: rgb(125, 125, 38); color: white;">Enter</button>

@@ -25,6 +25,8 @@
 
         .leaderboard-container{
 
+            overflow-x: auto;
+
             width:90%;
             max-width:850px;
 
@@ -38,6 +40,7 @@
             box-shadow:0 0 20px rgba(0,0,0,0.5);
 
         }
+
 
         .title{
 
@@ -55,7 +58,10 @@
         .player-row{
 
             display:grid;
-            grid-template-columns:1fr 2fr 2fr 2fr 2fr;
+
+            grid-template-columns:80px 180px 150px 150px 120px;
+            
+            min-width: 680px;
 
             align-items:center;
 
@@ -111,17 +117,24 @@
         }
 
         .back-btn{
-
-            width:30%;
-            margin-top:25px;
-            margin-left: 35%;
-            padding:15px;
+            max-width:100%;
             border:none;
             border-radius:12px;
             background:#e53935;
             color:white;
             font-size:18px;
             font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+        .btn-box{
+            max-width:100%;
+            text-align: center;
+            margin-top:25px;
+            padding:15px;
+            border:none;
+            border-radius:12px;
+            background:#e53935;
             cursor:pointer;
             transition:0.3s;
         }
@@ -132,6 +145,29 @@
             opacity:0.9;
 
         }
+    @media screen and (max-width:768px){
+
+    .leaderboard-container{
+
+        width:95%;
+        padding:15px;
+
+    }
+
+    .title{
+
+        font-size:28px;
+
+    }
+
+    .table-header,
+    .player-row{
+
+        font-size:14px;
+        padding:12px 10px;
+
+    }
+}
 
     </style>
 
@@ -174,10 +210,11 @@
         
 
         <!-- Back Button -->
-
-        <button class="back-btn" onclick="goBack()">
-            BACK
-        </button>
+        <div class="btn-box">
+            <button class="back-btn" onclick="goBack()">
+                BACK
+            </button>
+        </div>
 
     </div>
 
