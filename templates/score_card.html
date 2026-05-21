@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score Card</title>
+
+    <script>
+        function leaderBoard()
+        {
+            window.location.href = '/leaderboard'
+        }
+    </script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#141e30,#243b55);
+        }
+
+        .score-card{
+            width:420px;
+            padding:30px;
+            border-radius:20px;
+            background:rgba(255,255,255,0.1);
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,0.5);
+
+        }
+
+        .title{
+
+            text-align:center;
+            color:white;
+            font-size:35px;
+            margin-bottom:30px;
+            letter-spacing:2px;
+
+        }
+
+        .details{
+
+            display:flex;
+            flex-direction:column;
+            gap:18px;
+
+        }
+
+        .box{
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            padding:15px 20px;
+
+            background:rgba(255,255,255,0.08);
+
+            border-radius:12px;
+
+            color:white;
+
+            font-size:20px;
+
+        }
+
+        .label{
+
+            font-weight:bold;
+
+        }
+
+        .value{
+
+            color:#00e5ff;
+
+        }
+
+        .exit-btn{
+
+            width:100%;
+            margin-top:30px;
+            padding:15px;
+
+            border:none;
+            border-radius:12px;
+
+            background:#e53935;
+
+            color:white;
+
+            font-size:18px;
+            font-weight:bold;
+
+            cursor:pointer;
+
+            transition:0.3s;
+
+        }
+
+        .exit-btn:hover{
+
+            transform:scale(1.03);
+            opacity:0.9;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="score-card">
+
+        <h1 class="title">
+            SCORE CARD
+        </h1>
+
+        <div class="details">
+
+            <div class="box">
+                <span class="label">👤 Player</span>
+                <span class="value" id="player">{{player}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🎮 Level</span>
+                <span class="value" id="level">{{final_level}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">🔢 Question</span>
+                <span class="value" id="count">{{final_count}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">⭐ Score</span>
+                <span class="value" id="score">{{final_score}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">📊 Average</span>
+                <span class="value" id="average">{{final_average}}</span>
+            </div>
+
+            <div class="box">
+                <span class="label">⏱ Time</span>
+                <span class="value" id="time">{{final_time}}</span>
+            </div>
+
+        </div>
+
+        <button class="exit-btn" style="background:#00b894;" onclick="leaderBoard()">
+            LEADER BOARD
+        </button>
+
+        <button class="exit-btn" onclick="goBack()">
+            BACK
+        </button>
+
+    </div>
+
+</body>
+</html>

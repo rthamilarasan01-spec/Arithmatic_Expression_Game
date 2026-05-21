@@ -1,0 +1,138 @@
+<!-- # Arithmetic Calculation Game Login Interface -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arithmetic Calculation Game</title>
+
+    <script>
+
+        function closeWindow()
+        {
+            window.close();
+        }
+
+        function loginPage()
+        {
+            let player = document.getElementById('old_player').value;
+            window.location.href = '/login/'+player;
+        }
+
+         function newLoginPage()
+        {
+            let player = document.getElementById('new_player').value;
+            window.location.href = '/new_login/'+player;
+        }
+
+
+    </script>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+         body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#141e30,#243b55);
+        }
+
+        .container{
+            width:420px;
+            padding:30px;
+            border-radius:20px;
+            background:rgba(255,255,255,0.1);
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,0.5);
+        }
+
+        h1{
+            text-align:center;
+            color:white;
+            font-size:35px;
+            margin-bottom:25px;
+        }
+
+        h2{
+            margin-top:20px;
+            margin-bottom:10px;
+            color:white;
+            font-size:20px;
+        }
+
+        label{
+            font-weight:bold;
+            display:block;
+            margin-bottom:8px;
+            margin-top:10px;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            margin-bottom:15px;
+            font-size:16px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:8px;
+            background:#007bff;
+            color:white;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        .divider{
+            text-align:center;
+            margin:20px 0;
+            color:#aeabab;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Welcome to Arithmetic Calculation Game</h1>
+
+        <h2>Enter Player ID</h2>
+
+        <input type="text" id = "old_player" placeholder="Enter Player ID" required>
+        <p style="text-align: center; color: wheat;">{{player}}</p>
+
+        <button onclick="loginPage()">Login</button>
+
+        <div class="divider">OR</div>
+
+        <h2>New Player Create Player ID</h2>
+
+        <input type="text" id="new_player" placeholder="Create New Player ID" required>
+        <p style="text-align: center; color: wheat;">{{new_player}}</p>
+
+        <button onclick="newLoginPage()">Create Account</button>
+
+        <button class="btn exit-btn" style="margin-top: 20px; background:#d50000;" onclick="closeWindow()">EXIT</button>
+
+    </div>
+
+</body>
+</html>
+

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Menu</title>
+
+    <script>
+        function closeWindow()
+        {
+            window.close()
+        }
+
+        function chooseLevel()
+        {
+           let player = document.getElementById('player').innerText;
+           window.location.href="/level/"+player;
+        }
+
+        function gameStart(level)
+        {
+            let player = document.getElementById('player').innerText;
+            window.location.href = "/game/"+level+'/'+player;
+        }
+
+    </script>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#141e30,#243b55);
+        }
+
+        .game-container{
+            width:350px;
+            padding:40px;
+            border-radius:20px;
+            background:rgba(255,255,255,0.1);
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 20px rgba(0,0,0,0.4);
+            text-align:center;
+        }
+
+        .game-title{
+            color:white;
+            font-size:40px;
+            margin-bottom:40px;
+            letter-spacing:2px;
+        }
+
+        .btn,#player{
+            width:100%;
+            padding:15px;
+            margin:15px 0;
+            border:none;
+            border-radius:12px;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .enter-btn{
+            background:#00c853;
+            color:white;
+        }
+
+        .level-btn{
+            background:#ffab00;
+            color:white;
+        }
+
+        .exit-btn{
+            background:#d50000;
+            color:white;
+        }
+
+        .btn:hover{
+            transform:scale(1.05);
+            opacity:0.9;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="game-container">
+
+        <h1 class="game-title">GAME MENU</h1>
+
+        <div id="player" style="color: white;">{{player}}</div>
+
+        <button class="btn enter-btn" onclick="gameStart('Easy')">ENTER GAME</button>
+
+        <button class="btn level-btn" onclick="chooseLevel()">CHOOSE LEVEL</button>
+
+        <button class="btn exit-btn" onclick="closeWindow()">EXIT</button>
+
+    </div>
+
+</body>
+</html>
