@@ -25,8 +25,6 @@
 
         .leaderboard-container{
 
-            overflow-x: auto;
-
             width:90%;
             max-width:850px;
 
@@ -40,7 +38,6 @@
             box-shadow:0 0 20px rgba(0,0,0,0.5);
 
         }
-
 
         .title{
 
@@ -58,10 +55,7 @@
         .player-row{
 
             display:grid;
-
-            grid-template-columns:repeat(5,1fr);
-            
-            min-width: 680px;
+            grid-template-columns:1fr 2fr 2fr 2fr 2fr;
 
             align-items:center;
 
@@ -116,10 +110,11 @@
 
         }
 
-          .back-btn{
+        .back-btn{
 
-            min-width:670px;
+            width:30%;
             margin-top:25px;
+            margin-left: 35%;
             padding:15px;
             border:none;
             border-radius:12px;
@@ -137,28 +132,101 @@
             opacity:0.9;
 
         }
-    @media screen and (max-width:768px){
+
+/* Mobile Responsive Design */
+
+@media screen and (max-width:768px){
 
     .leaderboard-container{
-
-        grid-template-columns: 1fr;
-
+        width:95%;
+        padding:20px;
     }
 
     .title{
-
         font-size:28px;
+    }
+
+    /* Hide Header */
+    .table-header{
+        display:none;
+    }
+
+    /* Player Card */
+
+    .player-row{
+
+        display:flex;
+        flex-direction:column;
+
+        gap:15px;
+
+        padding:20px;
+
+        border-radius:15px;
+
+        background:rgba(255,255,255,0.12);
 
     }
 
-    .table-header,
-    .player-row,
+    /* Individual Blocks */
+
+    .player-row div{
+
+        width:100%;
+
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+
+        padding:12px 15px;
+
+        border-radius:10px;
+
+        background:rgba(255,255,255,0.08);
+
+    }
+
+    /* Labels */
+
+    .player-row div:nth-child(1)::before{
+        content:"Rank";
+        font-weight:bold;
+        color:#00e5ff;
+    }
+
+    .player-row div:nth-child(2)::before{
+        content:"Player";
+        font-weight:bold;
+        color:#00e5ff;
+    }
+
+    .player-row div:nth-child(3)::before{
+        content:"High Score";
+        font-weight:bold;
+        color:#00e5ff;
+    }
+
+    .player-row div:nth-child(4)::before{
+        content:"Average";
+        font-weight:bold;
+        color:#00e5ff;
+    }
+
+    .player-row div:nth-child(5)::before{
+        content:"Time";
+        font-weight:bold;
+        color:#00e5ff;
+    }
+
     .back-btn{
 
-        font-size:14px;
-        padding:12px 10px;
+        width:100%;
+        margin-left:0;
+
+        font-size:16px;
 
     }
+
 }
 
     </style>
