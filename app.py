@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres.iuduoczxcftbncfciktb:[YOUR-PASSWORD]@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres.iuduoczxcftbncfciktb:[!Vz$yG#_f634Frk]@aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 print("DATABASE_URL =", os.environ.get("DATABASE_URL"))
